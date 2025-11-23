@@ -1,0 +1,282 @@
+/* ============================
+   GLOBAL RESET & BASE
+============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: #f8f9fb;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================
+   NAVBAR
+============================= */
+.navbar {
+  width: 100%;
+  padding: 18px 40px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0077ff;
+}
+
+.navbar nav a {
+  margin-left: 22px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #333;
+}
+
+.navbar nav a:hover {
+  color: #0077ff;
+}
+
+/* ============================
+   HERO SECTION (PORTFOLIO)
+============================= */
+.hero {
+  padding: 120px 40px;
+  text-align: center;
+  background: linear-gradient(to bottom right, #eef6ff, #ffffff);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.hero h1 span {
+  color: #0077ff;
+}
+
+.hero p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 26px;
+  background: #0077ff;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.cta:hover {
+  background: #005fcc;
+}
+
+/* ============================
+   SECTION DEFAULT
+============================= */
+.section {
+  padding: 80px 40px;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+/* ============================
+   PROJECT GRID (PORTFOLIO)
+============================= */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.project-card {
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  transition: 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: #0077ff;
+}
+
+.project-card a {
+  text-decoration: none;
+  color: #0077ff;
+  font-weight: 600;
+}
+
+/* ============================
+   SKILLS TAG
+============================= */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skills li {
+  list-style: none;
+  background: #eef4ff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ============================
+   FOOTER
+============================= */
+footer {
+  padding: 40px;
+  text-align: center;
+  background: #f1f4f8;
+}
+
+/* ============================
+   E-COMMERCE — PRODUCT GRID
+============================= */
+.filter-bar {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 14px;
+}
+
+.filter-bar input,
+.filter-bar select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.product-item {
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #eee;
+  padding: 16px;
+  transition: .2s;
+}
+
+.product-item:hover {
+  transform: scale(1.02);
+  border-color: #0077ff;
+}
+
+.product-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.product-item h3 {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+/* ============================
+   CART LIST
+============================= */
+.cart-list {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+/* ============================
+   ADMIN DASHBOARD
+============================= */
+.sidebar {
+  width: 230px;
+  background: #0d1b2a;
+  color: white;
+  height: 100vh;
+  position: fixed;
+  padding: 30px 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 12px 0;
+  text-decoration: none;
+  color: #ccd6f6;
+}
+
+.sidebar nav a:hover {
+  color: #ffffff;
+}
+
+main {
+  margin-left: 250px;
+  padding: 40px;
+}
+
+.dashboard-section {
+  margin-bottom: 50px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  text-align: center;
+}
+
+/* ============================
+   USER TABLE
+============================= */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th,
+.user-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-table th {
+  background: #eef4ff;
+}

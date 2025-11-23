@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Admin Settings — Andre Admin</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/shared-data.js" defer></script>
+  <script src="assets/js/admin-auth.js" defer></script>
+  <script src="assets/js/admin-settings.js" defer></script>
+</head>
+<body>
+  <script> if (!localStorage.getItem('currentAdmin')) location.href='admin-login.html'; </script>
+
+  <aside class="sidebar">
+    <div class="brand">andre<span>dc</span></div>
+    <nav>
+      <a href="index.html">Overview</a>
+      <a href="users.html">Users</a>
+      <a href="reports.html">Reports</a>
+      <a href="settings.html" class="active">Settings</a>
+    </nav>
+    <div class="sidebar-foot">
+      <button class="btn ghost small" onclick="adminLogout()">Logout</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h1>Admin Settings</h1>
+    </header>
+
+    <section class="grid grid-2">
+      <div class="card form-card">
+        <h3>Edit Profile</h3>
+        <form id="profileForm">
+          <label>Name
+            <input type="text" id="adminName" required />
+          </label>
+          <label>Email
+            <input type="email" id="adminEmail" required />
+          </label>
+          <button class="btn" type="submit">Save</button>
+        </form>
+        <p id="profileMsg" class="msg"></p>
+      </div>
+
+      <div class="card form-card">
+        <h3>Change Password</h3>
+        <form id="passForm">
+          <label>Old Password
+            <input type="password" id="oldPass" required />
+          </label>
+          <label>New Password
+            <input type="password" id="newPass" required />
+          </label>
+          <button class="btn" type="submit">Update Password</button>
+        </form>
+        <p id="passMsg" class="msg"></p>
+      </div>
+    </section>
+
+    <footer class="footer">© 2025 — Andre D. Cahyana</footer>
+  </main>
+</body>
+</html>

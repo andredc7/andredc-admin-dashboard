@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Reports — Admin</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="assets/js/shared-data.js" defer></script>
+  <script src="assets/js/admin-auth.js" defer></script>
+  <script src="assets/js/reports.js" defer></script>
+</head>
+<body>
+  <script> if (!localStorage.getItem('currentAdmin')) location.href='admin-login.html'; </script>
+
+  <aside class="sidebar">
+    <div class="brand">andre<span>dc</span></div>
+    <nav>
+      <a href="index.html">Overview</a>
+      <a href="users.html">Users</a>
+      <a href="reports.html" class="active">Reports</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+    <div class="sidebar-foot">
+      <button class="btn ghost small" onclick="adminLogout()">Logout</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h1>Reports</h1>
+    </header>
+
+    <section class="card">
+      <h3>Monthly Revenue</h3>
+      <canvas id="reportChart" height="120"></canvas>
+    </section>
+
+    <section class="card" id="report-list">
+      <!-- dynamic reports injected here -->
+    </section>
+
+    <footer class="footer">© 2025 — Andre D. Cahyana</footer>
+  </main>
+</body>
+</html>

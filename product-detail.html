@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Admin — Product Detail</title><link rel="stylesheet" href="assets/css/main.css"></head>
+<body>
+  <header class="nav"><div class="brand"><a href="index.html">andre-admin</a></div></header>
+
+  <main class="container">
+    <h2>Product Detail (Admin)</h2>
+    <div id="admin-product-detail" class="card">Product detail will render here.</div>
+  </main>
+
+  <script src="assets/js/shared-data.js" defer></script>
+  <script>
+    // simple admin detail renderer (reads SHARED)
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const params = new URLSearchParams(location.search);
+      const id = Number(params.get('id'));
+      const p = SHARED.getProducts().find(x=>x.id===id);
+      const el = document.getElementById('admin-product-detail');
+      if(!p){ el.innerHTML = '<p>Product not found.</p>'; return; }
+      el.innerHTML = `<h3>${p.name}</h3><img src="${p.img}" style="max-width:320px;border-radius:8px"><p class="muted">Category: ${p.cat} • SKU: ${p.sku||'N/A'}</p><p>${p.description}</p>`;
+    });
+  </script>
+</body>
+</html>

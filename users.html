@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Users — Admin</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/shared-data.js" defer></script>
+  <script src="assets/js/admin-auth.js" defer></script>
+  <script src="assets/js/users.js" defer></script>
+</head>
+<body>
+  <script> if (!localStorage.getItem('currentAdmin')) location.href='admin-login.html'; </script>
+
+  <aside class="sidebar">
+    <div class="brand">andre<span>dc</span></div>
+    <nav>
+      <a href="index.html">Overview</a>
+      <a href="users.html" class="active">Users</a>
+      <a href="reports.html">Reports</a>
+      <a href="admin-settings.html">Settings</a>
+    </nav>
+    <div class="sidebar-foot">
+      <button class="btn ghost small" onclick="adminLogout()">Logout</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h1>Users</h1>
+      <div class="top-actions">
+        <input id="userSearch" placeholder="Search users..." />
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="table-wrap" id="usersTableWrap"></div>
+      <div style="margin-top:12px">
+        <button id="exportCsv" class="btn">Export CSV</button>
+      </div>
+    </section>
+
+    <footer class="footer">© 2025 — Andre D. Cahyana</footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin Login — Andre Admin</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/shared-data.js" defer></script>
+  <script src="assets/js/admin-auth.js" defer></script>
+</head>
+<body class="auth-body">
+  <main class="auth-container">
+    <form id="loginForm" class="auth-card">
+      <h2>Admin Sign in</h2>
+      <p class="muted">Enter your admin credentials to access the dashboard.</p>
+
+      <label>Email
+        <input type="email" name="email" required />
+      </label>
+
+      <label>Password
+        <div class="password-field">
+          <input type="password" name="password" id="adminPass" required />
+          <span class="toggle-eye" onclick="togglePassword('adminPass')">👁</span>
+        </div>
+      </label>
+
+      <div class="row-between">
+        <label style="font-weight:500"><input type="checkbox" id="rememberAdmin"> Remember</label>
+        <a class="link" href="forgot-password.html">Forgot password?</a>
+      </div>
+
+      <button class="btn primary" type="submit" id="loginBtn">Sign in</button>
+
+      <p id="loginMsg" class="msg"></p>
+
+      <div class="auth-footer">
+        <a href="register.html">Create admin</a>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

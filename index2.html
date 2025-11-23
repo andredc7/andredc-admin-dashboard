@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Andre — Admin Dashboard</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/shared-data.js" defer></script>
+  <script src="assets/js/admin-auth.js" defer></script>
+  <script src="assets/js/dashboard.js" defer></script>
+</head>
+<body>
+  <script>
+    // protect page: redirect to login if not authenticated
+    if (!localStorage.getItem('currentAdmin')) location.href = 'admin-login.html';
+  </script>
+
+  <aside class="sidebar">
+    <div class="brand">andre<span>dc</span></div>
+    <nav>
+      <a href="index.html" class="active">Overview</a>
+      <a href="users.html">Users</a>
+      <a href="reports.html">Reports</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+    <div class="sidebar-foot">
+      <button class="btn ghost small" onclick="adminLogout()">Logout</button>
+      <div class="muted">v1.0</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h1>Overview</h1>
+      <div class="top-actions">
+        <input id="quickSearch" placeholder="Quick search..." />
+      </div>
+    </header>
+
+    <section class="grid grid-3">
+      <div class="card">
+        <h3>Total Users</h3>
+        <p id="summary-users">--</p>
+      </div>
+      <div class="card">
+        <h3>Active Orders</h3>
+        <p id="summary-orders">--</p>
+      </div>
+      <div class="card">
+        <h3>Revenue (MoM)</h3>
+        <p id="summary-revenue">--</p>
+      </div>
+    </section>
+
+    <section class="card chart-card">
+      <h3>Sales trend</h3>
+      <canvas id="salesChart" height="120"></canvas>
+    </section>
+
+    <footer class="footer">© 2025 — Andre D. Cahyana</footer>
+  </main>
+</body>
+</html>

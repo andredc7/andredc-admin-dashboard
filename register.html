@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin Register — Andre Admin</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/shared-data.js" defer></script>
+  <script src="assets/js/admin-auth.js" defer></script>
+</head>
+<body class="auth-body">
+  <main class="auth-container">
+    <form id="registerForm" class="auth-card">
+      <h2>Create Admin</h2>
+      <p class="muted">Create an admin account. Used only for demo/portfolio.</p>
+
+      <label>Full Name
+        <input type="text" name="name" required />
+      </label>
+
+      <label>Email
+        <input type="email" name="email" required />
+      </label>
+
+      <label>Password
+        <input type="password" name="password" required />
+      </label>
+
+      <button class="btn primary" type="submit">Register</button>
+
+      <p id="regMsg" class="msg"></p>
+
+      <div class="auth-footer">
+        <a href="login.html">Back to login</a>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
